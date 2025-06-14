@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
 	--background: hsl(0 0% 100%);
 	--foreground: hsl(222.2 84% 4.9%);
@@ -33,11 +31,11 @@
 	--popover: hsl(222.2 84% 4.9%);
 	--popover-foreground: hsl(210 40% 98%);
 	--primary: hsl(356.95 96% 58%);
-	--primary-foreground: hsl(222.2 47.4% 11.2%);
+	--primary-foreground: hsl(210 40% 98%);
 	--secondary: hsl(217.2 32.6% 17.5%);
 	--secondary-foreground: hsl(210 40% 98%);
 	--muted: hsl(217.2 32.6% 17.5%);
-	--muted-foreground: hsl(215.4 16.3% 46.9%);
+	--muted-foreground: hsl(213, 13%, 67%);
 	--accent: hsl(217.2 32.6% 17.5%);
 	--accent-foreground: hsl(210 40% 98%);
 	--destructive: hsl(0 84.2% 60.2%);
@@ -89,7 +87,10 @@
 
 @utility container {
 	margin-inline: auto;
-	padding-inline: 2rem;
+	margin: 0 auto;
+	max-width: 1360px;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 @layer base {

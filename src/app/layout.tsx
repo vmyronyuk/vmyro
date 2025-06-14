@@ -1,3 +1,4 @@
+import { Footer } from '@/features/globals/components/Footer'
 import { Header } from '@/features/globals/components/Header/Header'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
@@ -32,6 +33,7 @@ export default function RootLayout({
 				<ThemeProvider>
 					<Header />
 					{children}
+					<Footer />
 				</ThemeProvider>
 			</body>
 		</html>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Logo } from './Logo'
+import { Logo } from '../Logo'
 import { Navbar } from './Navbar'
 import { ThemeSwitcher } from './ThemeSwitcher'
 

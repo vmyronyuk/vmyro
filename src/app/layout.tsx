@@ -20,6 +20,9 @@ export const metadata: Metadata = {
 		'Vitaliy Myroniuk — Fullstack Developer | 2 Years Experience | Next.js, React, Node.js',
 	description:
 		'Vitaliy Myroniuk — experienced Fullstack Developer with 2 years working on Next.js, React, Node.js, and AI-powered web applications. Building scalable, modern solutions using cutting-edge technologies. Let’s create your project together!',
+	icons: {
+		icon: '/favicon.svg',
+	},
 }
 
 export default function RootLayout({

@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
 export function ThemeSwitcher() {
-	const { theme, setTheme } = useTheme()
+	const { theme, setTheme, systemTheme } = useTheme()
 	const [mounted, setMounted] = useState(false)
 
 	useEffect(() => {
@@ -13,8 +13,14 @@ export function ThemeSwitcher() {
 	}, [])
 
 	if (!mounted) {
-		return null
+		return (
+			<Button variant='ghost' size='icon' aria-label='Toggle theme' disabled>
+				<Sun className='scale-125' />
+			</Button>
+		)
 	}
+
+	const currentTheme = theme === 'system' ? systemTheme : theme
 
 	const themeToggle = () => setTheme(theme === 'dark' ? 'light' : 'dark')
 
@@ -26,8 +32,12 @@ export function ThemeSwitcher() {
 			className='relative overflow-hidden'
 			aria-label='Toggle theme'
 		>
-			<Sun className={`${theme === 'dark' ? 'block' : 'hidden'} scale-125`} />
-			<Moon className={`${theme === 'dark' ? 'hidden' : 'block'} scale-125`} />
+			<Sun
+				className={`${currentTheme === 'dark' ? 'block' : 'hidden'} scale-125`}
+			/>
+			<Moon
+				className={`${currentTheme === 'dark' ? 'hidden' : 'block'} scale-125`}
+			/>
 		</Button>
 	)
 }

@@ -9,7 +9,7 @@ type ProjectCardContentProps = {
 
 export function ProjectCardContent({ project }: ProjectCardContentProps) {
 	return (
-		<div className='py-6 flex flex-col flex-1'>
+		<div className='pt-6 flex flex-col flex-1'>
 			<div className='flex items-center justify-between mb-3'>
 				<h3 className='font-semibold text-xl hover:text-primary transition-colors'>
 					{project.title}

@@ -5,7 +5,7 @@ export const projects: Project[] = [
 		title: 'KinderFinder Platform',
 		description:
 			'A smart discovery platform for kindergartens in Switzerland featuring an interactive Mapbox map, advanced filters, and a CMS for structured content management. Includes a custom web scraper and an AI-powered data extraction engine that identifies and stores the most relevant information from third-party websites. Fully developed end-to-end as the sole developer.',
-		tech: ['Next.js', 'Payload CMS', 'Mapbox', 'OpenAI API', 'PostgreSQL'],
+		tech: ['Next.js', 'Payload CMS', 'Mapbox', 'OpenAI API'],
 		category: 'fullstack',
 		link: '#',
 		featured: true,

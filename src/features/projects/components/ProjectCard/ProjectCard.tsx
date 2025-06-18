@@ -20,7 +20,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 			<ProjectFeatured isFeatured={project.featured} />
 			<ProjectCardImage projectTitle={project.title} />
 
-			<CardContent>
+			<CardContent className='flex flex-col flex-1'>
 				<ProjectCardContent project={project} />
 				<ProjectCardFooter project={project} />
 			</CardContent>

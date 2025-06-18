@@ -8,7 +8,7 @@ type ProjectCardFooterProps = {
 
 export function ProjectCardFooter({ project }: ProjectCardFooterProps) {
 	return (
-		<div className='flex justify-end mt-auto'>
+		<div className='flex justify-end my-4'>
 			<Button
 				asChild
 				disabled

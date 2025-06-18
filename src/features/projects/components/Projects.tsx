@@ -1,12 +1,12 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
 import { getLabel } from '@/lib/utils/getLabel'
 import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 import { projectCategoriesOptions } from '../domain'
 import { projects } from '../utils/project'
+import { ProjectsFilter } from './ProjectsFilter'
 
 export function Projects() {
 	return (
@@ -16,23 +16,7 @@ export function Projects() {
 				<p className='text-muted-foreground text-lg'>Some of my recent work</p>
 			</div>
 			<div className='flex flex-col gap-12'>
-				<div className='flex flex-col gap-6 mt-9'>
-					<div className='mx-auto w-xs md:w-md'>
-						<Input placeholder='Search project...' />
-					</div>
-					<div className='flex flex-wrap justify-center gap-2'>
-						{projectCategoriesOptions.map(category => (
-							<Button
-								key={category.value}
-								variant={'outline'}
-								size={'sm'}
-								className='font-semibold'
-							>
-								{category.label}
-							</Button>
-						))}
-					</div>
-				</div>
+				<ProjectsFilter />
 
 				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
 					{projects.map(project => (
@@ -86,6 +70,7 @@ export function Projects() {
 								<div className='flex justify-end mt-auto'>
 									<Button
 										asChild
+										disabled
 										className='w-full bg-primary hover:bg-primary/80 text-white shadow-lg shadow-primary/25 transition-all duration-300'
 									>
 										<a
@@ -93,6 +78,7 @@ export function Projects() {
 											target='_blank'
 											rel='noopener noreferrer'
 											aria-label={`View ${project.title} project`}
+											className='pointer-events-none'
 										>
 											<ExternalLink className='w-4 h-4 mr-2' />
 											View Project

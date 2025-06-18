@@ -1,5 +1,3 @@
-'use client'
-
 export function StatusBadge() {
 	return (
 		<div className='inline-flex items-center gap-2 bg-background/50 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 w-fit mx-auto'>

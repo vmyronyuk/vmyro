@@ -9,11 +9,7 @@ type ProjectCardFooterProps = {
 export function ProjectCardFooter({ project }: ProjectCardFooterProps) {
 	return (
 		<div className='flex justify-end my-4'>
-			<Button
-				asChild
-				disabled
-				className='w-full bg-primary hover:bg-primary/80 text-white shadow-lg shadow-primary/25 transition-all duration-300'
-			>
+			<Button variant={'shadow'} asChild disabled className='w-full'>
 				<a
 					href={project.link}
 					target='_blank'

@@ -15,13 +15,13 @@ export function MobileNavbar({
 	setIsMobileMenuOpen,
 }: MobileNavbarProps) {
 	const menuItemClickHandler = (id: string) => {
-		setIsMobileMenuOpen(!isMobileMenuOpen)
+		setIsMobileMenuOpen(false)
 		scrollTo(id)
 	}
 
 	return (
 		<div
-			className={`md:hidden absolute top-full left-0 w-full bg-background/70 backdrop-blur-md border-b border-border/50 shadow-lg transition-all duration-300 ${
+			className={`md:hidden fixed top-16 left-0 w-full z-40 bg-background/70 backdrop-blur-md border-b border-border/50 shadow-lg transition-all duration-300 ${
 				isMobileMenuOpen ? 'block' : 'hidden'
 			}`}
 		>

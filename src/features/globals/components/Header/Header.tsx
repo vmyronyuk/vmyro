@@ -25,28 +25,31 @@ export function Header() {
 	}
 
 	return (
-		<header
-			className={`fixed bg-background top-0 w-full z-50 transition-all duration-300 ${
-				isScrolled
-					? 'bg-background/70 backdrop-blur-md border-b border-border/50'
-					: 'bg-transparent'
-			}`}
-		>
-			<div className='container mx-auto px-4 py-4 flex items-center justify-between'>
-				<Logo />
-				<Navbar />
-				<div className='flex items-center gap-2'>
-					<ThemeSwitcher />
-					<MobileNavbarTrigger
-						isMobileNavbarOpen={isMobileMenuOpen}
-						toggleMobileMenu={toggleMobileMenu}
-					/>
+		<div>
+			<header
+				className={`fixed bg-background top-0 w-full z-50 transition-all duration-300 ${
+					isScrolled
+						? `bg-background/70 backdrop-blur-md border-b`
+						: 'bg-transparent'
+				}`}
+			>
+				<div className='container mx-auto px-4 py-4 flex items-center justify-between'>
+					<Logo />
+					<Navbar />
+					<div className='flex items-center gap-2'>
+						<ThemeSwitcher />
+						<MobileNavbarTrigger
+							isMobileNavbarOpen={isMobileMenuOpen}
+							toggleMobileMenu={toggleMobileMenu}
+						/>
+					</div>
 				</div>
-				<MobileNavbar
-					isMobileMenuOpen={isMobileMenuOpen}
-					setIsMobileMenuOpen={setIsMobileMenuOpen}
-				/>
-			</div>
-		</header>
+			</header>
+
+			<MobileNavbar
+				isMobileMenuOpen={isMobileMenuOpen}
+				setIsMobileMenuOpen={setIsMobileMenuOpen}
+			/>
+		</div>
 	)
 }

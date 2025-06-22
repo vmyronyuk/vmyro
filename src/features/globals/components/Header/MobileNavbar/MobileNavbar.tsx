@@ -22,7 +22,7 @@ export function MobileNavbar({
 	return (
 		<div
 			className={`md:hidden absolute top-full left-0 w-full bg-background/70 backdrop-blur-md border-b border-border/50 shadow-lg transition-all duration-300 ${
-				isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+				isMobileMenuOpen ? 'block' : 'hidden'
 			}`}
 		>
 			<nav className='container mx-auto p-4'>

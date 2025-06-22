@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from 'react'
 import { Logo } from '../Logo'
+import { MobileNavbar } from './MobileNavbar/MobileNavbar'
+import { MobileNavbarTrigger } from './MobileNavbar/MobileNavbarTrigger'
 import { Navbar } from './Navbar'
 import { ThemeSwitcher } from './ThemeSwitcher'
 
 export function Header() {
 	const [isScrolled, setIsScrolled] = useState(false)
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
 	useEffect(() => {
 		const scrollHandler = () => {
@@ -16,6 +19,10 @@ export function Header() {
 		window.addEventListener('scroll', scrollHandler)
 		return () => window.removeEventListener('scroll', scrollHandler)
 	}, [])
+
+	const toggleMobileMenu = () => {
+		setIsMobileMenuOpen(!isMobileMenuOpen)
+	}
 
 	return (
 		<header
@@ -28,7 +35,17 @@ export function Header() {
 			<div className='container mx-auto px-4 py-4 flex items-center justify-between'>
 				<Logo />
 				<Navbar />
-				<ThemeSwitcher />
+				<div className='flex items-center gap-2'>
+					<ThemeSwitcher />
+					<MobileNavbarTrigger
+						isMobileNavbarOpen={isMobileMenuOpen}
+						toggleMobileMenu={toggleMobileMenu}
+					/>
+				</div>
+				<MobileNavbar
+					isMobileMenuOpen={isMobileMenuOpen}
+					setIsMobileMenuOpen={setIsMobileMenuOpen}
+				/>
 			</div>
 		</header>
 	)

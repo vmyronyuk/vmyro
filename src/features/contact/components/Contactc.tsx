@@ -1,5 +1,5 @@
 import { ContactCards } from './ContactCards'
-import { ContactForm } from './ContactForm'
+import { ContactForm } from './ContactForm/ContactForm'
 
 export function Contact() {
 	return (

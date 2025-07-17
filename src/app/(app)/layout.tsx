@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Script from 'next/script'
-import './globals.css'
+import '../globals.css'
 import { Providers } from './providers'
 
 const geistSans = Geist({

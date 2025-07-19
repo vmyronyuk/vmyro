@@ -7,8 +7,30 @@ import {
 } from '@/features/projects/domain'
 import { getLabel } from '@/lib/utils/getLabel'
 import { ArrowLeft, Calendar, CircleAlert, CircleCheckBig } from 'lucide-react'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ id: string }>
+}): Promise<Metadata> {
+	const { id } = await params
+
+	if (!id) notFound()
+
+	const project = await getProjectById(Number(id))
+
+	return {
+		title: `${project.title} | Vitaliy Myroniuk`,
+		description: project.description,
+		openGraph: {
+			title: project.title,
+			description: project.description || 'Project description',
+		},
+	}
+}
 
 export default async function ProjectPage({
 	params,

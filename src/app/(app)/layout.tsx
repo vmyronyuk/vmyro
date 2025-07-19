@@ -68,11 +68,37 @@ export default function RootLayout({
 							'@type': 'Person',
 							name: 'Vitaliy Myroniuk',
 							jobTitle: 'Fullstack Developer',
+							description:
+								'Fullstack Developer with expertise in Next.js, TypeScript, PostgreSQL, Prisma, and scalable applications.',
 							url: 'https://www.vmyro.co/',
 							sameAs: [
 								'https://github.com/vmyronyuk',
 								'https://ua.linkedin.com/in/vitaliymyronyuk',
 								'https://www.instagram.com/v.myroniuk/',
+							],
+							alumniOf: {
+								'@type': 'CollegeOrUniversity',
+								name: 'Lviv State University of Life Safety',
+							},
+							address: {
+								'@type': 'PostalAddress',
+								addressLocality: 'Lviv',
+								addressCountry: 'UA',
+							},
+							knowsAbout: [
+								'Next.js',
+								'React',
+								'JavaScript',
+								'TypeScript',
+								'HTML',
+								'CSS',
+								'Tailwind CSS',
+								'PostgreSQL',
+								'Redux',
+								'Zustand',
+								'Jotai',
+								'Telegram Bots',
+								'IoT',
 							],
 						}),
 					}}

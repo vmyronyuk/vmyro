@@ -2,13 +2,18 @@
 
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
-import { projects } from '../utils/project'
+import { Project } from '../../../../payload-types'
+import { projectCategoriesValue, techStackValue } from '../domain'
 import { ProjectCard } from './ProjectCard/ProjectCard'
 import { ProjectsFilter } from './ProjectsFilter'
 import { ProjectsWrapper } from './ProjectsWrapper'
 import { Stats } from './Stats/Stats'
 
-export function Projects() {
+type ProjectsProps = {
+	projects: Project[]
+}
+
+export function Projects({ projects }: ProjectsProps) {
 	const [filteredProjects, setFilteredProjects] = useState(projects)
 
 	return (
@@ -25,17 +30,22 @@ export function Projects() {
 
 				<ProjectsWrapper>
 					{filteredProjects.map(project => (
-						<ProjectCard key={project.title} project={project} />
+						<ProjectCard key={project.id} project={project} />
 					))}
 				</ProjectsWrapper>
 
-				{filteredProjects.length > 2 && (
+				{filteredProjects.length > 3 && (
 					<Button variant={'outline'} className='w-fit py-5 px-12 font-medium'>
-						{`Show all ${filteredProjects.length} Projects`}
+						{`Show all ${projects.length} Projects`}
 					</Button>
 				)}
 
-				<Stats totalProjects={7} categories={5} technologies={18} clients={4} />
+				<Stats
+					totalProjects={`${projects.length}+`}
+					categories={projectCategoriesValue.length}
+					technologies={`${techStackValue.length}+`}
+					clients={'10+'}
+				/>
 			</div>
 		</section>
 	)

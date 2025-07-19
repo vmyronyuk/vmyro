@@ -2,12 +2,18 @@ import { CollectionConfig } from 'payload'
 import {
 	applicationStatusOptions,
 	applicationTypeOptions,
+	projectCategoriesOptions,
 	techStackOptions,
 } from '../domain'
 
 export const projectsCollection = {
 	slug: 'projects',
 	fields: [
+		{
+			name: 'featured',
+			type: 'checkbox',
+			defaultValue: false,
+		},
 		{
 			name: 'title',
 			type: 'text',
@@ -30,6 +36,11 @@ export const projectsCollection = {
 			type: 'select',
 			options: applicationStatusOptions,
 			required: true,
+		},
+		{
+			name: 'applicationCategory',
+			type: 'select',
+			options: projectCategoriesOptions,
 		},
 		{
 			name: 'description',

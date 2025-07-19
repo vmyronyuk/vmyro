@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { scrollTo } from '@/lib/utils/scrollTo'
 import { Download, Mail } from 'lucide-react'
 
 export function ActionButtons() {
@@ -14,7 +15,7 @@ export function ActionButtons() {
 	}
 
 	return (
-		<div className='flex items-center gap-3 mx-auto'>
+		<div className='flex items-center gap-3 mx-auto z-50'>
 			<Button
 				type='button'
 				onClick={handleDownload}
@@ -23,7 +24,11 @@ export function ActionButtons() {
 				<Download />
 				Download CV
 			</Button>
-			<Button variant={'outline'} className='font-semibold w-40 h-11'>
+			<Button
+				variant={'outline'}
+				className='font-semibold w-40 h-11'
+				onClick={() => scrollTo('contact')}
+			>
 				<Mail />
 				Contact me
 			</Button>

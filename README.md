@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Troubleshooting: Payload CLI with TypeScript/ESM
+
+If you encounter module resolution errors (e.g., "Cannot find module ...projectsCollection"), run Payload CLI commands using `tsx` to enable TypeScript/ESM support:
+
+```
+npx tsx node_modules/.bin/payload generate:types
+```
+
+This ensures all TypeScript and ESM imports are resolved correctly.

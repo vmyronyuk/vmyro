@@ -1,10 +1,10 @@
 import { StatsItem } from './StatsItem'
 
 type StatsProps = {
-	totalProjects: number
+	totalProjects: number | string
 	categories: number
-	technologies: number
-	clients: number
+	technologies: number | string
+	clients: number | string
 }
 
 export function Stats({

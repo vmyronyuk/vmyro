@@ -13,7 +13,6 @@ export function ProjectCardFooter({ project }: ProjectCardFooterProps) {
 			<Button variant={'shadow'} asChild disabled className='w-full'>
 				<Link
 					href={`/projects/${project.id}`}
-					target='_blank'
 					aria-label={`View ${project.title} project`}
 				>
 					<ExternalLink className='w-4 h-4 mr-2' />

@@ -119,10 +119,12 @@ export interface UserAuthOperations {
  */
 export interface Project {
   id: number;
+  featured?: boolean | null;
   title: string;
   finishedAt?: string | null;
   applicationType: 'mobile' | 'desktop' | 'web';
   applicationStatus: 'inProgress' | 'completed' | 'cancelled';
+  applicationCategory?: ('all' | 'fullstack' | 'frontend' | 'backend' | 'ai') | null;
   description?: string | null;
   links?: {
     demo?: string | null;
@@ -260,10 +262,12 @@ export interface PayloadMigration {
  * via the `definition` "projects_select".
  */
 export interface ProjectsSelect<T extends boolean = true> {
+  featured?: T;
   title?: T;
   finishedAt?: T;
   applicationType?: T;
   applicationStatus?: T;
+  applicationCategory?: T;
   description?: T;
   links?:
     | T

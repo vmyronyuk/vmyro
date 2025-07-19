@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card'
-import { Project } from '../../types'
+import { Project } from '../../../../../payload-types'
 import { ProjectCardContent } from './ProjectCardContent'
 import { ProjectCardFooter } from './ProjectCardFooter'
 import { ProjectCardImage } from './ProjectCardImage'
@@ -17,7 +17,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 				project.featured ? 'ring-2 ring-primary/20' : ''
 			}`}
 		>
-			<ProjectFeatured isFeatured={project.featured} />
+			<ProjectFeatured isFeatured={project.featured || false} />
 			<ProjectCardImage projectTitle={project.title} />
 
 			<CardContent className='flex flex-col flex-1'>

@@ -1,3 +1,4 @@
+import { projectsCollection } from '@/features/projects/collections/projectsCollection'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { buildConfig } from 'payload'
@@ -5,7 +6,7 @@ import sharp from 'sharp'
 
 export default buildConfig({
 	editor: lexicalEditor(),
-	collections: [],
+	collections: [projectsCollection],
 
 	secret: process.env.PAYLOAD_SECRET || '',
 	db: postgresAdapter({

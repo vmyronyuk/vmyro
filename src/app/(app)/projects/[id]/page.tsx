@@ -1,4 +1,5 @@
 import { Badge } from '@/components/ui/badge'
+import { getAllProjects } from '@/features/projects/dal/getAllProjects'
 import { getProjectById } from '@/features/projects/dal/getProjectById'
 import {
 	applicationStatusOptions,
@@ -10,6 +11,11 @@ import { ArrowLeft, Calendar, CircleAlert, CircleCheckBig } from 'lucide-react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+
+export async function generateStaticParams() {
+	const projects = await getAllProjects()
+	return projects.map(project => ({ id: project.id.toString() }))
+}
 
 export async function generateMetadata({
 	params,

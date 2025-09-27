@@ -2,5 +2,10 @@
 module.exports = {
 	siteUrl: 'https://www.vmyro.co/',
 	generateRobotsTxt: true,
-	generateIndexSitemap: false,
+	transform: async (config, path) => {
+		return {
+			loc: path,
+			lastmod: new Date().toISOString(),
+		}
+	},
 }
